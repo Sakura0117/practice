@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>todos</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/generated.css" />
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+</head>
+<body>
+  <div class="heading flex flex-wrap relative">
+    <h1 class="">HARU HARU</h1>
+    <div class="crumbs flex flex-wrap">
+        <ol class="flex flex-row flex-wrap bg-black p-4">
+            <li class="crumb px-4"><a href="bikes">New</a></li>
+            <li class="crumb px-4"><a href="bikes/bmx">Tops</a></li>
+            <li class="crumb px-4"><a href="bikes/bmx"></a>Bottom</li>
+            <li class="crumb px-4"><a href="bikes/bmx"></a>One piece</li>
+            <li class="crumb px-4"><a href="bikes/bmx"></a>shoes</li>
+            <li class="crumb px-4"><a href="bikes/bmx"></a>accessory</li>
+            <li class="crumb px-4"><a href="bikes/bmx"></a>cosmetic</li>
+        </ol>
+        <ol class=" flex flex-wrap flex-row bg-black p-4">
+          <li class="crumb px-4"><a href="bikes"><i class="fas fa-shopping-cart"></i></a></li>
+          <li class="crumb px-4"><a href="bikes/bmx"><i class="fas fa-heart"></i></li>
+          <li class="crumb px-4"><a href="bikes/bmx"></a><i class="fas fa-user"></i></li>
+      </ol>
+    </div>
+    <!--検索機能-->
+    <div class="flex flex-row w-full md:w-3/4 mx-auto bg-teal-200 rounded-t shadow-lg border-b-2 border-teal-300">
+      <input id="box" class="focus:shadow-outline w-full px-4 py-4 text-xl text-teal-500 bg-white font-light placeholder-teal-400 shadow-inner focus:bg-teal-500 focus:placeholder-teal-200 focus:text-teal-100" placeholder="検索ワード" />
+    </div>
+    <div class="search-box">
+      <div id="box_btn" class="p-4 text-center grid"><i class="fas fa-search text-3xl "></i><span class="text-1">search</span></div>
+    </div>
+  <div id="slider">
+    <ul class="aviaslider" id="frontpage-slider">
+      <li class="slider-image" id="slider1"><img src="./img/slide/top.jpg" alt="slider1"></li>
+      <li class="slider-image" id="slider2"><img src="./img/slide/top02.jpg" alt="slider2"></li>
+      <li class="slider-image" id="slider3"><img src="./img/slide/top03.jpg" alt="slider3"></li>
+    </ul>
+    <span id="prev">△</span>
+    <span id="next">△</span>
+  </div>
+  <ol class="flex-control-nav flex-control-paging">
+    <li><a class="flex-active">1</a></li>
+    <li><a>2</a></li>
+    <li><a>3</a></li>
+  </ol>
+  </div>
+  <div class="relative bg-teal-300 w-screen h-screen">
+    <div class="container mx-auto text-white flex flex-col w-full h-full items-center pt-12 px-4">
+      <span class="text-white font-light text-6xl mb-4 tracking-wide leading-relaxed">todos</span>
+      <div class="flex flex-col h-full w-full">
+        <div class="flex flex-row w-full md:w-3/4 mx-auto bg-teal-200 rounded-t shadow-lg border-b-2 border-teal-300">
+          <div id="checkAll" class="w-20 px-4 py-4 bg-teal-200">
+          </div>
+          <input id="inputTodo" class="focus:shadow-outline w-full px-4 py-4 text-xl text-teal-500 bg-teal-200 font-light placeholder-teal-400 shadow-inner focus:bg-teal-500 focus:placeholder-teal-200 focus:text-teal-100" placeholder="todo ?" />
+        </div>
+        <div id="todos-container">
+        </div>
+        <div class="flex justify-between items-center w-full md:w-3/4 mx-auto bg-teal-200 border-b-2 border-teal-300 rounded-b shadow-lg px-4 py-2">
+          <div id="left-items" class="text-md text-teal-500 font-light">
+          </div>
+          <div id="todo-filter" class="flex flex-row">
+          </div>
+          <div id="clear-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute w-full text-center bottom-0 text-white p-8">Created by hirokuma</div>
+  </div>
+  <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
