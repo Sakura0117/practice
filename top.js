@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout'
 import Cards from '../components/Cards';
 import Card from '../components/Card';
+import CardList from '../components/CardList';
 import { animateScroll as scroll } from 'react-scroll';
 import axios from 'axios';
 
@@ -37,17 +38,6 @@ function Top() {
     }
     main()
   }, [])
-
-  const addCard = () => {
-    const newCards = cards.concat([{
-      title: "NEW CARD",
-      description: "Lorem ipsum dolor sit amet. ",
-      color: "yellow",
-      hasError: false
-    }])
-    setCards(newCards)
-  }
-
   return (
     <Layout>
       <CardList>
@@ -60,7 +50,6 @@ function Top() {
           />
         ))}
       </CardList>
-      <AddCard addCard={addCard} />
       <div className="button button--totop" onClick={() => scroll.scrollToTop()}></div>
     </Layout>
   );
