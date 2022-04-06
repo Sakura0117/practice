@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CardList = () => (
- <div>hello world2</div>
+const CardList = ({ children }) => (
+ <div>{children}</div>
 )
 
 export default CardList

@@ -5,6 +5,7 @@ import Card from '../components/Card';
 import CardList from '../components/CardList';
 import { animateScroll as scroll } from 'react-scroll';
 import axios from 'axios';
+import dayjs from 'dayjs';
 
 import '../index.css';
 
@@ -13,7 +14,10 @@ function Top() {
   useEffect(() => {
     const main = async () => {
       try {
-        const api = await axios.get("https://api.nhk.or.jp/v2/pg/list/130/g1/2022-04-04.json?key=v7p6iqUGenYxuaH4Kkhl0TK6YGHABRZe",)
+        const now = dayjs();
+        console.log(now.format('YYYY-MM-DD'));
+
+        const api = await axios.get(`https://api.nhk.or.jp/v2/pg/list/130/g1/${now}.json?key=v7p6iqUGenYxuaH4Kkhl0TK6YGHABRZe`,)
 
         console.log(api)
       } catch(e) {
