@@ -16,101 +16,22 @@ function Top() {
       try {
         const now = dayjs().format("YYYY-MM-DD");
 
-        const api = await axios.get(
+        const { data: { data: { results } } } = await axios.get(
           `https://api.nhk.or.jp/v2/pg/list/130/g1/${now}.json?key=v7p6iqUGenYxuaH4Kkhl0TK6YGHABRZe`
         );
-
-        console.log(api);
+        setCards(results.data.list.g1);
       } catch (e) {
         console.log(e);
       }
-
-      setCards([
-        {
-          title: "カード1",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード2",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード3",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "yellow",
-          hasError: false,
-        },
-        {
-          title: "カード4",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード5",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: true,
-        },
-        {
-          title: "カード6",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード7",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード8",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード9",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード10",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード11",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-        {
-          title: "カード12",
-          description: "Lorem ipsum dolor sit amet. ",
-          color: "",
-          hasError: false,
-        },
-      ]);
     };
     main();
   }, []);
   return (
     <Layout>
       <CardList>
-        {cards.map((card) => (
+      {cards.map(card => (
           <Card
-            title={card.title}
-            description={card.description}
-            color={card.color}
-            hasError={card.hasError}
+          title={card.title}
           />
         ))}
       </CardList>

@@ -1,9 +1,8 @@
 import React from 'react';
 
-  const Card = ({ title, description }) => (
+  const Card = ({ title }) => (
     <>
-      <>{ title }</>
-      <>{ description }</>
+      <div>{ title }</div>
       </>
 
   )
