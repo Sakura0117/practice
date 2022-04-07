@@ -16,16 +16,18 @@ function Top() {
       try {
         const now = dayjs().format("YYYY-MM-DD");
 
-        const { data: { data: { results } } } = await axios.get(
+        const res = await axios.get(
           `https://api.nhk.or.jp/v2/pg/list/130/g1/${now}.json?key=v7p6iqUGenYxuaH4Kkhl0TK6YGHABRZe`
         );
-        setCards(results.data.list.g1);
+        setCards(res.data.list.g1);
       } catch (e) {
         console.log(e);
       }
+
     };
     main();
   }, []);
+  console.log(cards)
   return (
     <Layout>
       <CardList>
