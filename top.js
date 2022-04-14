@@ -14,12 +14,16 @@ function Top() {
   useEffect(() => {
     const main = async () => {
       try {
-        const now = dayjs().format("YYYY-MM-DD");
+        //const now = dayjs().format("YYYY-MM-DD");
 
         const res = await axios.get(
-          `https://api.nhk.or.jp/v2/pg/list/130/g1/${now}.json?key=v7p6iqUGenYxuaH4Kkhl0TK6YGHABRZe`
+          //`https://api.nhk.or.jp/v2/pg/info/130/g1/${now}.json?key=v7p6iqUGenYxuaH4Kkhl0TK6YGHABRZe`
+          `https://api.tvmaze.com/schedule`
+          //`https://api.nhk.or.jp/v2/pg/list/130/g1/${now}.json?key=v7p6iqUGenYxuaH4Kkhl0TK6YGHABRZe`
         );
-        setCards(res.data.list.g1);
+        //setCards(res.data.list.g1);
+        setCards(res);
+        console.log(res);
       } catch (e) {
         console.log(e);
       }
@@ -33,7 +37,8 @@ function Top() {
       <CardList>
       {cards.map(card => (
           <Card
-          title={card.title}
+          //title={card.title}
+          //subtitle={card.subtitle}
           />
         ))}
       </CardList>
